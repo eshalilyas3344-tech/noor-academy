@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import type { BlogPost } from "@/data/sitePages";
+import { outlineLink, pageWrap, primaryLink } from "./Shared";
+
+export function BlogDetailPage({ post }: { post: BlogPost }) {
+  return <main><article className="bg-[#f5f1e8] py-20 sm:py-24"><div className={`${pageWrap} max-w-4xl`}><Link href="/blog" className="inline-flex items-center gap-2 text-sm font-bold text-[#147d70]"><ArrowLeft size={15} aria-hidden="true" /> Back to Blog</Link><p className="mt-10 text-xs font-bold uppercase tracking-[0.18em] text-[#147d70]">{post.category} · Demo article</p><h1 className="mt-4 font-display text-5xl leading-tight text-[#17324d] sm:text-7xl">{post.title}</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-[#667085]">{post.excerpt}</p><div className="mt-8 flex gap-3 text-xs font-bold text-[#98a2b3]"><span>{post.date}</span><span>·</span><span>{post.readTime}</span></div></div></article><section className="bg-white py-20"><div className={`${pageWrap} max-w-3xl`}><div className="rounded-2xl border border-[#e7e5df] bg-[#fcfbf7] p-7 sm:p-10"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c6a15b]">Demo content</p><p className="mt-5 text-base leading-8 text-[#667085]">This article is a frontend placeholder. Final editorial content, author details, and publication dates will be supplied through the future Noor Academy content service.</p></div><div className="mt-10 flex flex-col gap-3 sm:flex-row"><Link href="/blog" className={outlineLink}><ArrowLeft size={15} aria-hidden="true" /> More articles</Link><Link href="/trial" className={primaryLink}>Book Free Trial <ArrowRight size={15} aria-hidden="true" /></Link></div></div></section></main>;
+}

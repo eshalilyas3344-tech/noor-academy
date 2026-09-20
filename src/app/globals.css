@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fcfbf7;
+  --foreground: #17212b;
+  --surface: #ffffff;
+  --surface-muted: #f5f1e8;
+  --surface-green: #eef7f3;
+  --navy: #17324d;
+  --emerald: #147d70;
+  --emerald-dark: #0f665c;
+  --gold: #c6a15b;
+  --gold-light: #e9ddbf;
+  --text-secondary: #667085;
+  --text-muted: #98a2b3;
+  --border: #e7e5df;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-emerald: var(--emerald);
+  --color-emerald-dark: var(--emerald-dark);
+  --color-gold: var(--gold);
+  --color-border: var(--border);
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-arabic: "Noto Naskh Arabic", "Amiri", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--gold) 72%, white);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
+.geometric-pattern {
+  background-image: linear-gradient(30deg, rgba(20, 125, 112, 0.06) 12%, transparent 12.5%, transparent 87%, rgba(20, 125, 112, 0.06) 87.5%, rgba(20, 125, 112, 0.06)), linear-gradient(150deg, rgba(20, 125, 112, 0.06) 12%, transparent 12.5%, transparent 87%, rgba(20, 125, 112, 0.06) 87.5%, rgba(20, 125, 112, 0.06));
+  background-position: 0 0, 20px 0;
+  background-size: 40px 70px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
